@@ -8,7 +8,7 @@ module.exports = {
         user: [],
         bot: []
     },
-    isOwner: true,
+    isOwner: false,
     min_args: 0,
     args: [],
     aliases: [],
