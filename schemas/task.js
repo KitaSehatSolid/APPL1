@@ -6,7 +6,8 @@ const TaskSchema = new mongoose.Schema({
     kode_matkul: String,
     description: String,
     accept: Array,
-    decline: Array
+    decline: Array,
+    archive: Array
 }, {versionKey: false})
 
-module.exports = mongoose.models.Config || mongoose.model('Task', TaskSchema)
+module.exports = mongoose.models.Task || mongoose.model('Task', TaskSchema)

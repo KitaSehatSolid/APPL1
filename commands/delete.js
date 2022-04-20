@@ -8,6 +8,7 @@ module.exports = {
         user: [],
         bot: []
     },
+    dmChannel: false,
     isOwner: false,
     min_args: 1,
     args: [],
