@@ -42,7 +42,7 @@ module.exports = {
                         message.channel.send(`Jadwal berhasil dihapus`)
                         let cr = client.cron[id]
                         cr.stop()
-                        delete client.cron[l._id]
+                        delete client.cron[id]
                     }
                     else message.channel.send(`Gagal menghapus jadwal`)
                 })

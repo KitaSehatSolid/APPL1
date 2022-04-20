@@ -8,7 +8,7 @@ module.exports = {
      * @param {Message} message
      */
     run: async(client, message) => {
-        if (message.author.bot || !message.guild) return
+        if (message.author.bot) return
         if (!message.content.startsWith(client.prefix)) return
         let [cmd, ...args] = message.content.slice(client.prefix.length).trim().split(/ +/g)
         let command = client.commands.get(cmd.toLowerCase()) || client.commands.get(client.aliases.get(cmd.toLowerCase()))

@@ -23,7 +23,7 @@ module.exports = {
             let channel = message.channel.id
             if (message.mentions.channels.size > 0) channel = message.mentions.channels.first().id
             
-            let doc = await config.findOneAndUpdate({server_id: message.guild.id}, {channel_id: channel}, {new: true, upsert: true})
+            let doc = await config.findOneAndUpdate({server_id: message.guild.id}, {server_id: message.guild.id, channel_id: channel}, {new: true, upsert: true})
             if (doc) return message.channel.send(`Channel presensi berhasil diatur!`)
         }
         catch (err)
