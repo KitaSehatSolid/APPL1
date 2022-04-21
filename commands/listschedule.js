@@ -27,13 +27,13 @@ module.exports = {
                 let arr = []
                 doc.forEach(d => {
                     let day = getDay(d.time.split(' ')[4].toUpperCase())
-                    arr.push(`\`[ID: ${d._id}]\` \`[${day}]\` \`[${d.jam_awal}-${d.jam_akhir}]\` \n${d.name}\n`)
+                    arr.push(`\`[ID: ${d._id}]\` \`[${d.kode_matkul}]\` \`[${day}]\` \`[${d.jam_awal}-${d.jam_akhir}]\` \n📃**${d.name}**\n`)
                 })
                 
                 let embed = {
                     description: arr.join(' ')
                 }
-                message.channel.send(`Daftar jadwal server`, {embed})
+                message.channel.send(`Daftar jadwal Mata Kuliah`, {embed})
             }
             else message.channel.send(`Tidak ada satu pun jadwal yang tersedia`)
         }
