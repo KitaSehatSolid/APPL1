@@ -28,6 +28,7 @@ module.exports = {
                 decline: {"$nin": message.author.id},
                 archive: {"$nin": message.author.id}
             })
+            if (!doc) return message.channel.send(`Task tidak ditemukan`)
             doc.accept.push(message.author.id)
             let upd = await task.findOneAndUpdate({task_id: doc.task_id}, doc, {new: true, upsert: true})
             if (upd) message.channel.send(`Berhasil mengerjakan tugas.`)
